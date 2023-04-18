@@ -1,9 +1,16 @@
+import { CityWeatherCard } from "@/components";
 import React from "react";
 
 export default function Home() {
+  const cities = ["Sobral", "Crateus", "Russas"];
+
   return (
     <React.Fragment>
-      <h1 className="text-3xl font-bold underline bg-red-900">hello world</h1>
+      <main>
+        {cities.map((city) => (
+          <CityWeatherCard city={city} key={city.toLowerCase()} />
+        ))}
+      </main>
     </React.Fragment>
   );
 }
