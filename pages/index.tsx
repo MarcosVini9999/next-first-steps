@@ -1,5 +1,5 @@
-import { CityWeatherCard } from "@/components";
 import React from "react";
+import { CityWeatherCard } from "@/components";
 
 export default function Home() {
   const cities = ["Sobral", "Crateus", "Russas"];
