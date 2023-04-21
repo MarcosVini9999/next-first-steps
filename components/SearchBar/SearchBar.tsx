@@ -1,5 +1,4 @@
 import React from "react";
-import { DropdownMenu } from "@/components";
 import Link from "next/link";
 
 export function SearchBar() {
@@ -21,7 +20,6 @@ export function SearchBar() {
         onKeyDown={keyPress}
       />
       <Link href={`/${city}`}>search</Link>
-      <DropdownMenu />
     </React.Fragment>
   );
 }

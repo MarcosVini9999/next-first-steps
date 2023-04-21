@@ -4,14 +4,21 @@ interface ButtonProps {
   children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
-export function Button({ children, className, onClick }: ButtonProps) {
+export function Button({
+  children,
+  className,
+  onClick,
+  disabled,
+}: ButtonProps) {
   return (
     <React.Fragment>
       <button
         className={`p-2 rounded-sm hover:ring-1 hover:ring-gray-300 ${className}`}
         onClick={onClick}
+        disabled={disabled}
       >
         {children}
       </button>

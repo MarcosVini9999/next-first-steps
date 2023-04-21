@@ -1,6 +1,8 @@
 import React from "react";
 import { GetServerSideProps } from "next";
 import { LocationMeasurement } from "@/config/interfaces/ILocationMeasurement";
+import { Button } from "@/components";
+import { CityContext } from "@/contexts/city";
 
 interface CityProps {
   LocationMeasurement: LocationMeasurement;
@@ -8,6 +10,8 @@ interface CityProps {
 }
 
 export default function City({ LocationMeasurement, message }: CityProps) {
+  const { postNewCity } = React.useContext(CityContext);
+
   return (
     <React.Fragment>
       <h1>Cidade: {LocationMeasurement.name}</h1>
@@ -17,6 +21,13 @@ export default function City({ LocationMeasurement, message }: CityProps) {
       <h1>Temperatura Min: {LocationMeasurement.main.temp_min}</h1>
       <h1>Humidade: {LocationMeasurement.main.humidity}</h1>
       <h1>Sensação Térmica: {LocationMeasurement.main.feels_like}</h1>
+      <Button
+        onClick={() => {
+          postNewCity(LocationMeasurement.name);
+        }}
+      >
+        Salvar cidade
+      </Button>
     </React.Fragment>
   );
 }
