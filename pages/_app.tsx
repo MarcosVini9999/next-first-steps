@@ -6,10 +6,7 @@ import type { AppProps } from "next/app";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => setMounted(true), []);
-
-  return mounted ? (
+  return (
     <CityProvider>
       <ThemeProvider enableSystem={true} attribute="class">
         <Layout>
@@ -17,7 +14,5 @@ export default function App({ Component, pageProps }: AppProps) {
         </Layout>
       </ThemeProvider>
     </CityProvider>
-  ) : (
-    <h1>Loading</h1>
   );
 }

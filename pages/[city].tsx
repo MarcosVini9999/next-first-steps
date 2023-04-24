@@ -9,7 +9,7 @@ interface CityProps {
   message: string;
 }
 
-export default function City({ LocationMeasurement, message }: CityProps) {
+export default function City({ LocationMeasurement }: CityProps) {
   const { postNewCity } = React.useContext(CityContext);
 
   return (
