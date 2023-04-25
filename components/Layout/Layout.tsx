@@ -71,7 +71,10 @@ export function Layout({ children }: LayoutProps) {
         />
         <meta property="og:url" content="weather-location-next.vercel.app/" />
         <meta property="og:image" content="/sky-sun-logo.svg" />
-        <meta property="og:image:secure_url" content="/sky-sun-logo.svg" />
+        <meta
+          property="og:image:secure_url"
+          content="https://weather-location-next.vercel.app/sky-sun-logo.svg"
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="675" />
         <meta property="og:image:type" content="image/svg" />
