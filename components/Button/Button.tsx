@@ -3,16 +3,11 @@ import React from "react";
 interface ButtonProps {
   children?: React.ReactNode;
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   disabled?: boolean;
 }
 
-export function Button({
-  children,
-  className,
-  onClick,
-  disabled,
-}: ButtonProps) {
+export function Button({ children, className, onClick, disabled }: ButtonProps) {
   return (
     <React.Fragment>
       <button

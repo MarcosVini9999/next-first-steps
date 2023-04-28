@@ -4,6 +4,7 @@ import { useStorage } from "@/hooks/useStorage";
 interface CityContextInfo {
   citiesSaved: Array<string> | undefined;
   postNewCity: (city: string) => void;
+  deleteCity: (city: string) => void;
 }
 
 interface CityProviderProps {
@@ -13,7 +14,7 @@ interface CityProviderProps {
 export const CityContext = React.createContext({} as CityContextInfo);
 
 export function CityProvider({ children }: CityProviderProps) {
-  const [citiesSaved, saveCities] = useStorage("cities", [] as Array<string>);
+  const [citiesSaved, saveCities, removeValue] = useStorage("cities", [] as Array<string>);
 
   const postNewCity = (city: string) => {
     const list = [...citiesSaved];
@@ -22,8 +23,12 @@ export function CityProvider({ children }: CityProviderProps) {
     saveCities(list);
   };
 
+  const deleteCity = (city: string) => {
+    removeValue(city);
+  };
+
   return (
-    <CityContext.Provider value={{ citiesSaved, postNewCity }}>
+    <CityContext.Provider value={{ citiesSaved, postNewCity, deleteCity }}>
       {children}
     </CityContext.Provider>
   );
