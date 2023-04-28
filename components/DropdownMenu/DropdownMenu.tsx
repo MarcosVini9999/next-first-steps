@@ -1,6 +1,7 @@
 import { CityContext } from "@/contexts/city";
 import React from "react";
 import { Button } from "../Button/Button";
+import Link from "next/link";
 
 interface DropdownMenuProps {
   open: boolean;
@@ -15,12 +16,10 @@ export function DropdownMenu({ open }: DropdownMenuProps) {
   const renderCities = () => {
     return citiesSaved && citiesSaved.length > 0 ? (
       citiesSaved?.map((city) => (
-        <div
+        <Link
           className="flex items-center justify-between rounded p-3 hover:cursor-pointer hover:bg-slate-100 hover:dark:bg-slate-500"
           key={city}
-          onClick={() => {
-            window.location.pathname = `/${city}`;
-          }}
+          href={city}
         >
           <h1>{city}</h1>
           <Button
@@ -44,7 +43,7 @@ export function DropdownMenu({ open }: DropdownMenuProps) {
               />
             </svg>
           </Button>
-        </div>
+        </Link>
       ))
     ) : (
       <h1>NENHUMA CIDADE SALVA</h1>
