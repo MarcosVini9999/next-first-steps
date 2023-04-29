@@ -78,6 +78,7 @@ export function Layout({ children }: LayoutProps) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="675" />
         <meta property="og:image:type" content="image/svg" />
+        <meta property="og:locale" content="pt_BR" />
       </Head>
       <div className="flex justify-between flex-col h-screen">
         <Header />
