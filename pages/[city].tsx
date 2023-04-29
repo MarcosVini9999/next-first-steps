@@ -59,6 +59,7 @@ export default function City({ locationMeasurement }: CityProps) {
                 {UnixToLocalTime(locationMeasurement.sys.sunset, locationMeasurement.timezone)}
               </h1>
               <h1>Direção do Vento: {DegToCompass(locationMeasurement.wind.deg)}</h1>
+              <h1>Situação: {locationMeasurement.weather[0].description}</h1>
             </div>
             {mounted &&
             citiesSaved?.filter((city) => city === locationMeasurement.name)[0] ===
@@ -103,7 +104,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const data = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${context.params.city}&appid=${process.env.TOKEN}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${context.params.city}&lang=pt_br&appid=${process.env.TOKEN}`
   );
 
   const locationMeasurement = await data.json();
