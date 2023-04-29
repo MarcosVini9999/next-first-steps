@@ -11,7 +11,7 @@ export function Button({ children, className, onClick, disabled }: ButtonProps) 
   return (
     <React.Fragment>
       <button
-        className={`p-2 rounded-sm hover:ring-1 hover:ring-gray-300 ${className}`}
+        className={`p-2 rounded-sm hover:ring-1 hover:ring-gray-300 hover:dark:ring-gray-700 ${className}`}
         onClick={onClick}
         disabled={disabled}
       >

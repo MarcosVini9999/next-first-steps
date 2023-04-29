@@ -20,7 +20,7 @@ export default function City({ locationMeasurement }: CityProps) {
     <React.Fragment>
       {locationMeasurement.name ? (
         <div className="grid auto-cols-fr md:grid-flow-col bg-zinc-400 dark:bg-slate-800 h-full p-10 animate-fade-in-right">
-          <div className="rounded-lg bg-zinc-300 dark:bg-slate-600 p-4 m-4">
+          <div>
             <h1 className="flex items-center gap-2 font-bold text-2xl md:text-4xl lg:text-5xl">
               <img
                 src={`https://openweathermap.org/img/wn/${locationMeasurement.weather[0].icon}@2x.png`}
