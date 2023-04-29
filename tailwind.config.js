@@ -10,8 +10,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       keyframes: {
         fadeInDown: {
@@ -24,9 +23,18 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+        fadeInRight: {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(0)",
+          },
+        },
       },
       animation: {
         "fade-in-down": "fadeInDown 0.3s ease",
+        "fade-in-right": "fadeInRight 0.3s ease",
       },
     },
   },
