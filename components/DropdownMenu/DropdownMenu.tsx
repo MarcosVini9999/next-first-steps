@@ -24,6 +24,7 @@ export function DropdownMenu({ open }: DropdownMenuProps) {
           <h1>{city}</h1>
           <Button
             onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+              e.preventDefault();
               e.stopPropagation();
               deleteCity(city);
             }}
